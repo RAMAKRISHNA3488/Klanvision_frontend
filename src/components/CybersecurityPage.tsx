@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronLeft, ShieldAlert, Lock, Eye, FileCheck, Zap, ArrowRight, CheckCircle2, ShieldCheck, Fingerprint, Activity, Shield, Terminal, Search } from 'lucide-react';
+import { ChevronLeft, ShieldAlert, Lock, FileCheck, Zap, ArrowRight, CheckCircle2, ShieldCheck, Fingerprint, Activity, Shield, Terminal, Search } from 'lucide-react';
 import { useRef } from 'react';
 
 export default function CybersecurityPage() {

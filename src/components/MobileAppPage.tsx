@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronLeft, Smartphone, Layout, Cpu, Globe, Zap, ArrowRight, CheckCircle2, Apple, Play, Code2, Rocket, Share2, ShieldCheck, Activity } from 'lucide-react';
+import { ChevronLeft, Smartphone, Layout, Cpu, Globe, ArrowRight, CheckCircle2, Apple, Play, Code2, Rocket, Share2, ShieldCheck, Activity } from 'lucide-react';
 import { useRef } from 'react';
 
 export default function MobileAppPage() {

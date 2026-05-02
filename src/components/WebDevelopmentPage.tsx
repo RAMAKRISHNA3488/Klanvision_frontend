@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronLeft, Code2, Layout, Database, Globe, Zap, ArrowRight, CheckCircle2, Cpu, Smartphone, Monitor, Gauge, Rocket } from 'lucide-react';
+import { ChevronLeft, Code2, Layout, Database, Zap, ArrowRight, CheckCircle2, Cpu, Smartphone, Monitor, Gauge, Rocket } from 'lucide-react';
 import { useRef } from 'react';
 
 export default function WebDevelopmentPage() {

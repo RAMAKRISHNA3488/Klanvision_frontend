@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bot, X, Send, User, Code2, CheckCircle2, ChevronRight, MessageSquare } from 'lucide-react';
+import { Bot, X, Send, User, Code2, CheckCircle2, ChevronRight } from 'lucide-react';
 
 // ── Knowledge Base ──
 const KNOWLEDGE_BASE = {
