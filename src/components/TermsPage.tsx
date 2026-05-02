@@ -48,7 +48,7 @@ export default function TermsPage() {
             transition={{ duration: 0.6 }}
             style={{ textAlign: 'center' }}
           >
-            <a href="https://klanvision-frontend.vercel.app/" style={{ color: '#A855F7', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 24, letterSpacing: '1px' }}>
+            <a href="https://www.klanvision.com/" style={{ color: '#A855F7', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 24, letterSpacing: '1px' }}>
               <ChevronLeft size={16} /> BACK TO HOME
             </a>
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 900, marginBottom: 16 }}>

@@ -102,7 +102,7 @@ export default function Navbar() {
   // Smooth scroll to a section by id and close mobile menu
   const scrollTo = (id: string) => {
     if (window.location.pathname !== '/') {
-      window.location.href = `https://klanvision-frontend.vercel.app/#${id}`;
+      window.location.href = `https://www.klanvision.com/#${id}`;
       return;
     }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });

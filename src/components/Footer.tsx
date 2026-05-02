@@ -162,7 +162,7 @@ export default function Footer() {
   // Smooth scroll helper used for quick links navigation
   const scrollTo = (id: string) => {
     if (window.location.pathname !== '/') {
-      window.location.href = `https://klanvision-frontend.vercel.app/#${id}`;
+      window.location.href = `https://www.klanvision.com/#${id}`;
       return;
     }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -316,7 +316,7 @@ export default function Footer() {
                 <li key={link}>
                   {link === 'FAQ' ? (
                     <motion.a 
-                      href="https://klanvision-frontend.vercel.app/faq" 
+                      href="https://www.klanvision.com/faq" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="footer-link" 
@@ -329,7 +329,7 @@ export default function Footer() {
                     </motion.a>
                   ) : link === 'Terms & Conditions' ? (
                     <motion.a 
-                      href="https://klanvision-frontend.vercel.app/terms" 
+                      href="https://www.klanvision.com/terms" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="footer-link" 
@@ -342,7 +342,7 @@ export default function Footer() {
                     </motion.a>
                   ) : link === 'Service Policy' ? (
                     <motion.a 
-                      href="https://klanvision-frontend.vercel.app/service-policy" 
+                      href="https://www.klanvision.com/service-policy" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="footer-link" 
@@ -355,7 +355,7 @@ export default function Footer() {
                     </motion.a>
                   ) : link === 'Cancellation & Refund Policy' ? (
                     <motion.a 
-                      href="https://klanvision-frontend.vercel.app/refund-policy" 
+                      href="https://www.klanvision.com/refund-policy" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="footer-link" 
@@ -368,7 +368,7 @@ export default function Footer() {
                     </motion.a>
                   ) : link === 'Privacy Policy' ? (
                     <motion.a 
-                      href="https://klanvision-frontend.vercel.app/privacy-policy" 
+                      href="https://www.klanvision.com/privacy-policy" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="footer-link" 

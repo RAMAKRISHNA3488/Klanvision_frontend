@@ -111,7 +111,7 @@ export default function FAQPage() {
             transition={{ duration: 0.6 }}
             style={{ textAlign: 'center' }}
           >
-            <a href="https://klanvision-frontend.vercel.app/" style={{ color: '#A855F7', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 24, letterSpacing: '1px' }}>
+            <a href="https://www.klanvision.com/" style={{ color: '#A855F7', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 24, letterSpacing: '1px' }}>
               <ChevronLeft size={16} /> BACK TO HOME
             </a>
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900, marginBottom: 16 }}>
@@ -185,7 +185,7 @@ export default function FAQPage() {
         >
           <h2 style={{ fontWeight: 800, fontSize: 28, marginBottom: 12 }}>Still have questions?</h2>
           <p style={{ color: '#6B7280', marginBottom: 32, fontSize: 16 }}>Can't find the answer you're looking for? Our support team is here to help.</p>
-          <a href="https://klanvision-frontend.vercel.app/#contact-form" className="btn-primary" style={{ textDecoration: 'none', padding: '16px 40px', display: 'inline-block' }}>
+          <a href="https://www.klanvision.com/#contact-form" className="btn-primary" style={{ textDecoration: 'none', padding: '16px 40px', display: 'inline-block' }}>
             Contact Support Team
           </a>
         </motion.div>
