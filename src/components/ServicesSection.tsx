@@ -258,13 +258,13 @@ export default function ServicesSection() {
               whileHover={{ y: -10, scale: 1.02 }}
               onClick={() => {
                 if (s.title === 'Managed Services') window.location.href = 'https://klanvision-frontend.vercel.app/managed-services';
-                if (s.title === 'IT Consultation & Advisory') window.location.href = '/it-consultation';
-                if (s.title === 'Securing Your Digital Infrastructure') window.location.href = '/cybersecurity';
-                if (s.title === 'Web Development') window.location.href = '/web-development';
-                if (s.title === 'Mobile App Design & Deployment') window.location.href = '/mobile-app';
-                if (s.title === 'Cloud Services') window.location.href = '/cloud-services';
-                if (s.title === 'Website Upgrade & Migration') window.location.href = '/upgrade-migration';
-                if (s.title === 'API Integration') window.location.href = '/api-integration';
+                if (s.title === 'IT Consultation & Advisory') window.location.href = 'https://klanvision-frontend.vercel.app/it-consultation';
+                if (s.title === 'Securing Your Digital Infrastructure') window.location.href = 'https://klanvision-frontend.vercel.app/cybersecurity';
+                if (s.title === 'Web Development') window.location.href = 'https://klanvision-frontend.vercel.app/web-development';
+                if (s.title === 'Mobile App Design & Deployment') window.location.href = 'https://klanvision-frontend.vercel.app/mobile-app';
+                if (s.title === 'Cloud Services') window.location.href = 'https://klanvision-frontend.vercel.app/cloud-services';
+                if (s.title === 'Website Upgrade & Migration') window.location.href = 'https://klanvision-frontend.vercel.app/upgrade-migration';
+                if (s.title === 'API Integration') window.location.href = 'https://klanvision-frontend.vercel.app/api-integration';
               }}
               className="card"
               style={{ padding: '32px 24px', position: 'relative', overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
@@ -314,13 +314,13 @@ export default function ServicesSection() {
                 onClick={(e) => {
                   e.stopPropagation();
                   if (s.title === 'Managed Services') window.location.href = 'https://klanvision-frontend.vercel.app/managed-services';
-                  if (s.title === 'IT Consultation & Advisory') window.location.href = '/it-consultation';
-                  if (s.title === 'Securing Your Digital Infrastructure') window.location.href = '/cybersecurity';
-                  if (s.title === 'Web Development') window.location.href = '/web-development';
-                  if (s.title === 'Mobile App Design & Deployment') window.location.href = '/mobile-app';
-                  if (s.title === 'Cloud Services') window.location.href = '/cloud-services';
-                  if (s.title === 'Website Upgrade & Migration') window.location.href = '/upgrade-migration';
-                  if (s.title === 'API Integration') window.location.href = '/api-integration';
+                  if (s.title === 'IT Consultation & Advisory') window.location.href = 'https://klanvision-frontend.vercel.app/it-consultation';
+                  if (s.title === 'Securing Your Digital Infrastructure') window.location.href = 'https://klanvision-frontend.vercel.app/cybersecurity';
+                  if (s.title === 'Web Development') window.location.href = 'https://klanvision-frontend.vercel.app/web-development';
+                  if (s.title === 'Mobile App Design & Deployment') window.location.href = 'https://klanvision-frontend.vercel.app/mobile-app';
+                  if (s.title === 'Cloud Services') window.location.href = 'https://klanvision-frontend.vercel.app/cloud-services';
+                  if (s.title === 'Website Upgrade & Migration') window.location.href = 'https://klanvision-frontend.vercel.app/upgrade-migration';
+                  if (s.title === 'API Integration') window.location.href = 'https://klanvision-frontend.vercel.app/api-integration';
                 }}
               >
                 <span style={{ color: s.color, fontWeight: 700, fontSize: 13, fontFamily: "'Poppins',sans-serif", letterSpacing: '0.3px' }}>Read More</span>

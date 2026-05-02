@@ -56,7 +56,7 @@ export default function UpgradeMigrationPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <a href="/" style={{ color: '#A5B4FC', display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 32, letterSpacing: '1px' }}>
+            <a href="https://klanvision-frontend.vercel.app/" style={{ color: '#A5B4FC', display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 32, letterSpacing: '1px' }}>
               <ChevronLeft size={18} /> BACK TO SOLUTIONS
             </a>
             
@@ -81,7 +81,7 @@ export default function UpgradeMigrationPage() {
                 </p>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>
-                  <a href="/#contact-form" className="btn-primary" style={{ textDecoration: 'none', padding: '18px 36px', background: '#6366F1', color: 'white', borderRadius: '12px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 10, boxShadow: '0 10px 20px rgba(99,102,241,0.3)' }}>
+                  <a href="https://klanvision-frontend.vercel.app/#contact-form" className="btn-primary" style={{ textDecoration: 'none', padding: '18px 36px', background: '#6366F1', color: 'white', borderRadius: '12px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 10, boxShadow: '0 10px 20px rgba(99,102,241,0.3)' }}>
                     Upgrade My System <ArrowRight size={18} />
                   </a>
                 </div>
@@ -323,7 +323,7 @@ export default function UpgradeMigrationPage() {
               </p>
 
               <motion.a 
-                href="/#contact-form" 
+                href="https://klanvision-frontend.vercel.app/#contact-form" 
                 whileHover={{ scale: 1.03, boxShadow: '0 15px 30px rgba(99,102,241,0.3)' }}
                 whileTap={{ scale: 0.98 }}
                 style={{ 

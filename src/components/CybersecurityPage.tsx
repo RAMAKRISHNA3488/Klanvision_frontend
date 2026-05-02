@@ -71,7 +71,7 @@ export default function CybersecurityPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <a href="/" style={{ color: '#EF4444', display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 40, letterSpacing: '1px' }}>
+              <a href="https://klanvision-frontend.vercel.app/" style={{ color: '#EF4444', display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, marginBottom: 40, letterSpacing: '1px' }}>
                 <ChevronLeft size={18} /> BACK TO SOLUTIONS
               </a>
               
@@ -96,7 +96,7 @@ export default function CybersecurityPage() {
                   </p>
 
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
-                    <a href="/#contact-form" className="btn-primary" style={{ textDecoration: 'none', padding: '20px 48px', background: '#EF4444', color: 'white', borderRadius: '16px', fontWeight: 800, fontSize: 18, display: 'flex', alignItems: 'center', gap: 12, boxShadow: '0 20px 40px rgba(239,68,68,0.3)' }}>
+                    <a href="https://klanvision-frontend.vercel.app/#contact-form" className="btn-primary" style={{ textDecoration: 'none', padding: '20px 48px', background: '#EF4444', color: 'white', borderRadius: '16px', fontWeight: 800, fontSize: 18, display: 'flex', alignItems: 'center', gap: 12, boxShadow: '0 20px 40px rgba(239,68,68,0.3)' }}>
                       Start Security Audit <ArrowRight size={20} />
                     </a>
                   </div>
@@ -344,7 +344,7 @@ export default function CybersecurityPage() {
               </p>
 
               <motion.a 
-                href="/#contact-form" 
+                href="https://klanvision-frontend.vercel.app/#contact-form" 
                 whileHover={{ scale: 1.03, boxShadow: '0 15px 30px rgba(239,68,68,0.3)' }}
                 whileTap={{ scale: 0.98 }}
                 style={{ 
