@@ -257,7 +257,7 @@ export default function ServicesSection() {
               transition={{ duration: 0.5, delay: i * 0.07 }}
               whileHover={{ y: -10, scale: 1.02 }}
               onClick={() => {
-                if (s.title === 'Managed Services') window.location.href = '/managed-services';
+                if (s.title === 'Managed Services') window.location.href = 'https://klanvision-frontend.vercel.app/managed-services';
                 if (s.title === 'IT Consultation & Advisory') window.location.href = '/it-consultation';
                 if (s.title === 'Securing Your Digital Infrastructure') window.location.href = '/cybersecurity';
                 if (s.title === 'Web Development') window.location.href = '/web-development';
