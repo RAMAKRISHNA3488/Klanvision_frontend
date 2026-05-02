@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronLeft, RefreshCw, Zap, Shield, Search, ArrowRight, CheckCircle2, Cpu, Database, Gauge, Globe } from 'lucide-react';
+import { ChevronLeft, RefreshCw, Zap, Search, ArrowRight, CheckCircle2, Cpu, Gauge } from 'lucide-react';
 
 export default function UpgradeMigrationPage() {
   const upgradeFeatures = [
