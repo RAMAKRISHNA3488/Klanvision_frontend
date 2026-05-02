@@ -313,7 +313,7 @@ export default function ServicesSection() {
                 className="read-more-wrap"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (s.title === 'Managed Services') window.location.href = '/managed-services';
+                  if (s.title === 'Managed Services') window.location.href = 'https://klanvision-frontend.vercel.app/managed-services';
                   if (s.title === 'IT Consultation & Advisory') window.location.href = '/it-consultation';
                   if (s.title === 'Securing Your Digital Infrastructure') window.location.href = '/cybersecurity';
                   if (s.title === 'Web Development') window.location.href = '/web-development';
