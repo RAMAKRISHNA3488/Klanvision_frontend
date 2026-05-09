@@ -6,6 +6,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ShieldCheck, Sun, Moon } from 'lucide-react';
+
 
 // Navigation items – label shown in nav, id used for scrollTo target
 const navItems = [
@@ -18,7 +20,13 @@ const navItems = [
   { label: 'CAREERS',   id: 'careers'   },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
+}
+
+export default function Navbar({ theme, toggleTheme }: NavbarProps) {
+
   const [mobileOpen, setMobileOpen]       = useState(false);   // mobile menu toggle
   const [searchQuery, setSearchQuery]     = useState('');       // search input value
   const [isSearchOpen, setIsSearchOpen]   = useState(false);   // dropdown visibility
@@ -101,6 +109,10 @@ export default function Navbar() {
 
   // Smooth scroll to a section by id and close mobile menu
   const scrollTo = (id: string) => {
+    if (id === 'careers') {
+      window.location.href = '/careers';
+      return;
+    }
     if (window.location.pathname !== '/') {
       window.location.href = `https://www.klanvision.com/#${id}`;
       return;
@@ -131,15 +143,19 @@ export default function Navbar() {
         {/* White pill container */}
         <div style={{
           width: '100%', maxWidth: 1280,
-          background: 'white',
+          background: 'var(--bg-surface)',
+
           borderRadius: 40,
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           paddingLeft: 12, paddingRight: 0,
           pointerEvents: 'auto',
-          height: 64, border: '1px solid #f3f4f6'
+          height: 64, border: '1px solid var(--border-main)',
+          transition: 'all 0.3s ease'
         }}>
+
           {/* Logo – scales in, scrolls to hero on click */}
+
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -264,31 +280,65 @@ export default function Navbar() {
             </div>
 
             {/* Request for Quote – orange pill CTA, flush with the right edge */}
+            {/* Admin Secure Login – multicolor animated CTA */}
             <motion.button
-              whileHover={{ opacity: 0.95 }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => scrollTo('contact')}
+              onClick={() => window.location.href = '/admin'}
               style={{
-                background: '#FF6B35', color: 'white', border: 'none',
+                background: '#FF6B35',
+                color: 'white', border: 'none',
                 height: 'calc(100% + 2px)', padding: '0 32px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: 12,
-                fontSize: 14, fontWeight: 700, fontFamily: 'sans-serif',
+                fontSize: 13, fontWeight: 900, fontFamily: 'sans-serif',
                 borderTopRightRadius: 40, borderBottomRightRadius: 40,
                 marginRight: -1, marginTop: -1, marginBottom: -1,
-                zIndex: 10
+                zIndex: 10,
+                position: 'relative',
+                overflow: 'hidden'
               }}
             >
-              Request for Quote
-              <div style={{
-                width: 24, height: 24, background: 'white', borderRadius: '50%',
-                display: 'flex', alignItems: 'center', justifyContent: 'center'
-              }}>
-                <svg width="12" height="12" fill="none" stroke="#FF6B35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
+              <div style={{ position: 'relative', zIndex: 2, display: 'flex', alignItems: 'center', gap: 12 }}>
+                {/* Status Indicator */}
+                <div style={{ position: 'relative', width: 10, height: 10 }}>
+                  <div style={{ width: '100%', height: '100%', borderRadius: '50%', background: '#10B981' }} />
+                  <motion.div
+                    animate={{ scale: [1, 2.5], opacity: [0.6, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    style={{ position: 'absolute', inset: 0, borderRadius: '50%', background: '#10B981' }}
+                  />
+                </div>
+                ADMIN SECURE LOGIN
+                <div style={{
+                  width: 24, height: 24, background: 'white', borderRadius: '50%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center'
+                }}>
+                  <ShieldCheck size={14} color="#FF6B35" />
+                </div>
               </div>
             </motion.button>
+
+            {/* Theme Toggle – Sun/Moon switch */}
+            <div style={{ padding: '0 16px', height: '100%', display: 'flex', alignItems: 'center' }}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={toggleTheme}
+                style={{
+                  width: 40, height: 40, borderRadius: '50%',
+                  background: 'var(--bg-surface-soft)',
+                  border: '1px solid var(--border-main)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer', color: theme === 'light' ? '#F59E0B' : '#6366F1',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                {theme === 'light' ? <Sun size={20} strokeWidth={2.5} /> : <Moon size={20} strokeWidth={2.5} />}
+              </motion.button>
+            </div>
           </div>
+
 
           {/* Hamburger – shown only on mobile (≤1024px) */}
           <button

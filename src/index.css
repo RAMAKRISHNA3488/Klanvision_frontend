@@ -14,10 +14,45 @@
   --primary-blue: #4F46E5;
   --primary-purple: #7C3AED;
   --accent: #FF6B35;
-  --bg-light: #F5F6FA;
-  --text-dark: #1F2937;
-  --text-light: #6B7280;
+  
+  /* Light Mode (Default) */
+  --bg-main: #F5F6FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-soft: #F9FAFB;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --border-main: #E5E7EB;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --hero-bg: linear-gradient(135deg, #EEF2FF 0%, #F3E8FF 50%, #FFF7ED 100%);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+
+  /* Compatibility with App.css */
+  --accent-bg: rgba(255, 107, 53, 0.1);
+  --accent-border: rgba(255, 107, 53, 0.2);
+  --border: var(--border-main);
+  --text-h: var(--text-main);
+  --social-bg: var(--bg-surface-soft);
+  --shadow: var(--card-shadow);
 }
+
+/* Dark Mode (Attractive & Professional) */
+[data-theme='dark'] {
+  --bg-main: #020617;
+  --bg-surface: #0F172A;
+  --bg-surface-soft: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-main: #1E293B;
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --hero-bg: linear-gradient(135deg, #020617 0%, #0F172A 50%, #1E1B4B 100%);
+  --glass-bg: rgba(15, 23, 42, 0.85);
+
+  /* Compatibility with App.css */
+  --accent-bg: rgba(255, 107, 53, 0.2);
+  --accent-border: rgba(255, 107, 53, 0.4);
+}
+
+
 
 html {
   scroll-behavior: smooth;
@@ -25,13 +60,15 @@ html {
 
 body {
   font-family: 'Poppins', 'Roboto', sans-serif;
-  background-color: #F5F6FA;
-  color: #1F2937;
+  background-color: var(--bg-main);
+  color: var(--text-main);
   overflow-x: hidden;
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 .container {
   width: 100%;
@@ -186,11 +223,12 @@ p {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-main);
 }
+
 
 /* ===== ANIMATIONS ===== */
 @keyframes float {
@@ -613,6 +651,79 @@ textarea.form-input {
   font-weight: 900;
 }
 
+/* ===== FLOATING BUTTONS ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 125px;
+  right: 30px;
+  z-index: 2000;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9000;
+  transition: all 0.3s ease;
+}
+
+.ai-chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 9001;
+  width: 380px;
+  max-width: calc(100vw - 60px);
+  height: 520px;
+  max-height: calc(100vh - 150px);
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #F3F4F6;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 100px;
+    right: 20px;
+    transform: scale(0.85);
+  }
+  .ai-assistant-toggle {
+    bottom: 20px;
+    right: 20px;
+    transform: scale(0.85);
+  }
+  .ai-chat-window {
+    bottom: 85px;
+    right: 20px;
+    width: 340px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    bottom: 90px;
+    right: 15px;
+    transform: scale(0.75);
+  }
+  .ai-assistant-toggle {
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.75);
+  }
+  .ai-chat-window {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
+
 /* ================================================================
    RESPONSIVE DESIGN SYSTEM
    Breakpoints:
@@ -846,8 +957,8 @@ textarea.form-input {
 
   /* Hero image */
   .hero-image-wrap {
-    width: 180px !important;
-    height: 180px !important;
+    width: 160px !important;
+    height: 160px !important;
   }
 
   /* Stats row wrap */
@@ -948,4 +1059,19 @@ textarea.form-input {
     font-size: 11px !important;
     letter-spacing: 0.5px !important;
   }
+
+  /* Prevent text overflow on small headings */
+  h1 {
+    font-size: 1.3rem !important;
+  }
+  h2 {
+    font-size: 1.15rem !important;
+  }
+}
+
+/* Fix for horizontal scroll issues */
+.overflow-x-hidden-global {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  position: relative !important;
 }

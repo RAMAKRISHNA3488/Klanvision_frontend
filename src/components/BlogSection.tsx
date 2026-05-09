@@ -191,7 +191,8 @@ export default function BlogSection() {
 
   return (
     // Section – light gray background
-    <section id="blog" style={{ background: '#F5F6FA', padding: '80px 0' }}>
+    <section id="blog" style={{ background: 'var(--bg-main)', padding: '80px 0', transition: 'background 0.3s ease' }}>
+
       <div className="container">
 
         {/* Section Header – accent bar + heading + subtitle */}
@@ -202,12 +203,13 @@ export default function BlogSection() {
           style={{ textAlign: 'center', marginBottom: 56 }}
         >
           <div className="accent-bar" />
-          <h2 className="font-bold tracking-tight text-[#1F2937]" style={{ marginBottom: 16 }}>
+          <h2 className="font-bold tracking-tight text-[var(--text-main)]" style={{ marginBottom: 16 }}>
             Latest from Our <span className="gradient-text">Blog</span>
           </h2>
-          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: 17, maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
             Insights, tutorials, and industry news from the Klanvision team — stay ahead of the digital curve.
           </p>
+
         </motion.div>
 
         {/* Blog Cards Grid – 1 col mobile, 2 cols sm, 3 cols lg */}
@@ -222,8 +224,16 @@ export default function BlogSection() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -7 }}         // lift on hover
               className="card"
-              style={{ overflow: 'hidden', cursor: 'pointer' }}
+              style={{ 
+                overflow: 'hidden', 
+                cursor: 'pointer',
+                background: 'var(--bg-surface)',
+                boxShadow: 'var(--card-shadow)',
+                border: '1px solid var(--border-main)',
+                transition: 'all 0.3s ease'
+              }}
             >
+
               {/* Cover area – tinted gradient background with 3D icon */}
               <div style={{
                 height: 180, background: `linear-gradient(135deg, ${post.tagColor}08, ${post.tagColor}15)`,
@@ -245,18 +255,19 @@ export default function BlogSection() {
                   <span className="blog-tag" style={{ background: `${post.tagColor}15`, color: post.tagColor }}>
                     {post.tag}
                   </span>
-                  <span style={{ color: '#9CA3AF', fontSize: 12 }}>{post.date}</span>
+                  <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>{post.date}</span>
                 </div>
 
                 {/* Article title and excerpt */}
-                <h3 style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: 17, marginBottom: 10, lineHeight: 1.3 }}>{post.title}</h3>
-                <p style={{ color: '#6B7280', fontSize: 13.5, lineHeight: 1.65, marginBottom: 20 }}>{post.excerpt}</p>
+                <h3 style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: 17, marginBottom: 10, lineHeight: 1.3, color: 'var(--text-main)' }}>{post.title}</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: 13.5, lineHeight: 1.65, marginBottom: 20 }}>{post.excerpt}</p>
 
                 {/* Footer row – author and read time */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 16, borderTop: '1px solid #F3F4F6' }}>
-                  <span style={{ color: '#9CA3AF', fontSize: 12, display: 'flex', alignItems: 'center', gap: 4 }}><PenTool size={12} /> {post.author}</span>
-                  <span style={{ color: '#9CA3AF', fontSize: 12, display: 'flex', alignItems: 'center', gap: 4 }}><Clock size={12} /> {post.readTime}</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 16, borderTop: '1px solid var(--border-main)' }}>
+                  <span style={{ color: 'var(--text-muted)', fontSize: 12, display: 'flex', alignItems: 'center', gap: 4 }}><PenTool size={12} /> {post.author}</span>
+                  <span style={{ color: 'var(--text-muted)', fontSize: 12, display: 'flex', alignItems: 'center', gap: 4 }}><Clock size={12} /> {post.readTime}</span>
                 </div>
+
               </div>
             </motion.article>
           ))}
