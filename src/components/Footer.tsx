@@ -16,9 +16,10 @@ import DotGrid from './DotGrid';
 const quickLinks = [
   { label: 'Home', id: 'hero' },
   { label: 'Services', id: 'services' },
-  { label: 'My Portfolio', id: 'portfolio' },
+  { label: 'Portfolio', id: 'portfolio' },
   { label: 'About', id: 'about' },
-  { label: 'Contact', id: 'contact' }
+  { label: 'Contact', id: 'contact' },
+  { label: 'Careers', id: 'careers' }
 ];
 
 // Legal policy links - strictly matching the updated documented info
@@ -35,7 +36,8 @@ const legalContent: Record<string, { title: string; content: React.ReactNode }> 
   'Terms & Conditions': {
     title: 'Terms & Conditions',
     content: (
-      <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563' }}>
+      <div style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--text-muted)' }}>
+
         <p style={{ marginBottom: 16 }}>Welcome to Klanvision. By accessing our website and using our services, you agree to the following terms:</p>
         <ul style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingLeft: 16 }}>
           <li>• All services are delivered based on agreed scope, timelines, and pricing.</li>
@@ -53,7 +55,8 @@ const legalContent: Record<string, { title: string; content: React.ReactNode }> 
     content: (
       <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563' }}>
         <p style={{ marginBottom: 12 }}>At Klanvision, we deliver high-quality IT and software solutions tailored to meet diverse business requirements.</p>
-        <h4 style={{ fontWeight: 700, color: '#1F2937', marginBottom: 8 }}>Our service offerings include:</h4>
+        <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: 8 }}>Our service offerings include:</h4>
+
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 16px', marginBottom: 16 }}>
           <span>• Web Development</span>
           <span>• Mobile Application Development</span>
@@ -64,7 +67,8 @@ const legalContent: Record<string, { title: string; content: React.ReactNode }> 
           <span>• Website Migration & Upgrades</span>
           <span>• IT Consultation & Advisory</span>
         </div>
-        <h4 style={{ fontWeight: 700, color: '#1F2937', marginBottom: 8 }}>Service Delivery Approach</h4>
+        <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: 8 }}>Service Delivery Approach</h4>
+
         <ol style={{ paddingLeft: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
           <li><strong>1. Requirement Analysis</strong> – Perform detailed requirement gathering and business analysis.</li>
           <li><strong>2. Solution Design & Planning</strong> – Develop architecture and implementation strategy.</li>
@@ -80,15 +84,18 @@ const legalContent: Record<string, { title: string; content: React.ReactNode }> 
     content: (
       <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563' }}>
         <p style={{ marginBottom: 12 }}>We are committed to protecting the privacy and integrity of your information.</p>
-        <h4 style={{ fontWeight: 700, color: '#1F2937', marginBottom: 6 }}>Information We Collect</h4>
+        <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: 6 }}>Information We Collect</h4>
+
         <ul style={{ paddingLeft: 16, marginBottom: 12 }}>
           <li>• Personal details (name, email, contact number)</li>
           <li>• Organization details and project requirements</li>
           <li>• Technical data such as IP address and interaction data</li>
         </ul>
-        <h4 style={{ fontWeight: 700, color: '#1F2937', marginBottom: 6 }}>Data Sharing</h4>
+        <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: 6 }}>Data Sharing</h4>
+
         <p style={{ marginBottom: 12 }}>Klanvision does not sell or rent your data. We share information only with trusted partners for service delivery or as required by law.</p>
-        <h4 style={{ fontWeight: 700, color: '#1F2937', marginBottom: 6 }}>Data Security</h4>
+        <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: 6 }}>Data Security</h4>
+
         <p>We implement industry-standard technical and organizational safeguards to protect your data from unauthorized access.</p>
       </div>
     )
@@ -161,6 +168,10 @@ export default function Footer() {
 
   // Smooth scroll helper used for quick links navigation
   const scrollTo = (id: string) => {
+    if (id === 'careers') {
+      window.location.href = '/careers';
+      return;
+    }
     if (window.location.pathname !== '/') {
       window.location.href = `https://www.klanvision.com/#${id}`;
       return;
@@ -198,37 +209,39 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ display: 'flex', flexDirection: 'column', gap: 20 }}
+            style={{ display: 'flex', flexDirection: 'column' }}
           >
-            {/* Logo mark + wordmark */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              {/* Premium Multicolor Logo Mark */}
-              <motion.div 
-                whileHover={{ rotate: 10, scale: 1.1 }}
-                style={{ 
-                  width: 42, height: 42, borderRadius: 12, 
-                  background: 'linear-gradient(135deg, #4F46E5, #7C3AED, #FF6B35)', 
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  boxShadow: '0 8px 25px rgba(124, 58, 237, 0.3)',
-                  position: 'relative', overflow: 'hidden'
-                }}
-              >
-                {/* Glossy overlay for depth */}
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%)' }} />
-                <span style={{ color: 'white', fontWeight: 900, fontFamily: "'Poppins', sans-serif", fontSize: 22, position: 'relative', zIndex: 2 }}>K</span>
-              </motion.div>
 
-              {/* Premium Wordmark Logo – Multicolor KLAN, Crisp White VISION */}
+            {/* Logo mark + wordmark */}
+            <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', gap: 16, marginBottom: 28 }} onClick={() => scrollTo('hero')}>
+
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                style={{ 
+                  width: 68,
+                  height: 68,
+                  background: 'linear-gradient(135deg, #4F46E5, #7C3AED, #FF6B35)',
+                  WebkitMaskImage: 'url(/logo.png)',
+                  maskImage: 'url(/logo.png)',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  filter: 'drop-shadow(0 0 12px rgba(124, 58, 237, 0.5))'
+                }} 
+              />
+
+
               <motion.span 
                 whileHover={{ scale: 1.02 }}
                 style={{ 
-                  fontFamily: "'Poppins', sans-serif", 
+                  fontFamily: "'Outfit', 'Poppins', sans-serif", 
                   fontWeight: 900, 
-                  fontSize: 26, 
-                  letterSpacing: 1.5, 
+                  fontSize: 28, 
+                  letterSpacing: 2, 
                   display: 'flex', 
-                  gap: 6,
-                  cursor: 'default'
+                  gap: 4,
+                  cursor: 'pointer'
                 }}
               >
                 <span style={{ 
@@ -236,14 +249,17 @@ export default function Footer() {
                   WebkitBackgroundClip: 'text', 
                   WebkitTextFillColor: 'transparent', 
                   backgroundClip: 'text',
-                  filter: 'drop-shadow(0 2px 10px rgba(124, 58, 237, 0.15))'
+                  filter: 'drop-shadow(0 2px 10px rgba(124, 58, 237, 0.2))'
                 }}>KLAN</span>
                 <span style={{ color: 'white' }}>VISION</span>
               </motion.span>
             </div>
 
+
+
             {/* Tagline */}
-            <p style={{ color: '#9CA3AF', fontSize: 14, lineHeight: 1.75 }}>
+            <p style={{ color: '#9CA3AF', fontSize: 14, lineHeight: 1.75, marginBottom: 20 }}>
+
               Transforming the Future of Technology | Empowering Businesses with Enhanced Digital Solutions.
             </p>
 
@@ -492,16 +508,20 @@ export default function Footer() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              style={{ background: 'white', color: '#1F2937', width: '100%', maxWidth: 650, borderRadius: 24, overflow: 'hidden', position: 'relative', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}
+              style={{ background: 'var(--bg-surface)', color: 'var(--text-main)', width: '100%', maxWidth: 650, borderRadius: 24, overflow: 'hidden', position: 'relative', boxShadow: 'var(--card-shadow)', border: '1px solid var(--border-main)' }}
               onClick={e => e.stopPropagation()}
             >
+
               {/* Header */}
-              <div style={{ padding: '24px 32px', borderBottom: '1px solid #F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#F9FAFB' }}>
-                <h3 style={{ margin: 0, fontSize: 20, fontWeight: 800, color: '#111827' }}>{activeLegal}</h3>
+              <div style={{ padding: '24px 32px', borderBottom: '1px solid var(--border-main)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'var(--bg-surface-soft)' }}>
+
+                <h3 style={{ margin: 0, fontSize: 20, fontWeight: 800, color: 'var(--text-main)' }}>{activeLegal}</h3>
+
                 <button 
                   onClick={() => setActiveLegal(null)}
-                  style={{ background: '#F3F4F6', border: 'none', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#6B7280' }}
+                  style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-main)', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: 'var(--text-muted)' }}
                 >
+
                   <X size={20} />
                 </button>
               </div>
@@ -510,9 +530,10 @@ export default function Footer() {
                 {legalContent[activeLegal].content}
               </div>
               {/* Footer */}
-              <div style={{ padding: '20px 32px', borderTop: '1px solid #F3F4F6', textAlign: 'right', background: '#F9FAFB' }}>
+              <div style={{ padding: '20px 32px', borderTop: '1px solid var(--border-main)', textAlign: 'right', background: 'var(--bg-surface-soft)' }}>
                 <button onClick={() => setActiveLegal(null)} className="btn-primary" style={{ padding: '10px 24px', fontSize: 14 }}>Close</button>
               </div>
+
             </motion.div>
           </motion.div>
         )}

@@ -101,7 +101,8 @@ const highlights = [
 export default function AboutSection() {
   return (
     // Section – light gray background with decorative blob overlays
-    <section id="about" style={{ background: '#F5F6FA', padding: '80px 0', position: 'relative', overflow: 'hidden' }}>
+    <section id="about" style={{ background: 'var(--bg-main)', padding: '80px 0', position: 'relative', overflow: 'hidden', transition: 'background 0.3s ease' }}>
+
       {/* Decorative background blobs – indigo top-right, orange bottom-left */}
       <div style={{ position: 'absolute', top: -80, right: -80, width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(79,70,229,0.07), transparent)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: -80, left: -80, width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,107,53,0.07), transparent)', pointerEvents: 'none' }} />
@@ -115,9 +116,10 @@ export default function AboutSection() {
           style={{ textAlign: 'center', marginBottom: 64 }}
         >
           <div className="accent-bar" />
-          <h2 className="font-bold tracking-tight text-[#1F2937]" style={{ marginBottom: 16 }}>
+          <h2 className="font-bold tracking-tight text-[var(--text-main)]" style={{ marginBottom: 16 }}>
             About <span className="gradient-text">Us</span>
           </h2>
+
           <p style={{ color: '#7C3AED', fontSize: 16, fontStyle: 'italic', fontWeight: 500, maxWidth: 580, margin: '0 auto' }}>
             Guiding the digital future with clarity and consistency. Our vision since 2025: Transforming Ideas into Digital Reality.
           </p>
@@ -154,12 +156,24 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className="glass"
-                  style={{ borderRadius: 16, padding: '14px 10px', textAlign: 'center', boxShadow: '0 8px 24px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                  style={{ 
+                    borderRadius: 16, 
+                    padding: '14px 10px', 
+                    textAlign: 'center', 
+                    boxShadow: 'var(--card-shadow)',
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center',
+                    background: 'var(--bg-surface)',
+                    border: '1px solid var(--border-main)',
+                    transition: 'all 0.3s ease'
+                  }}
                 >
                   <div style={{ marginBottom: 4 }}><m.icon /></div>
-                  <div className="text-[#1F2937]" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: 16 }}>{m.val}</div>
-                  <div style={{ color: '#6B7280', fontSize: 11, marginTop: 2 }}>{m.lbl}</div>
+                  <div style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: 16, color: 'var(--text-main)' }}>{m.val}</div>
+                  <div style={{ color: 'var(--text-muted)', fontSize: 11, marginTop: 2 }}>{m.lbl}</div>
                 </motion.div>
+
               ))}
             </div>
           </motion.div>
@@ -178,18 +192,21 @@ export default function AboutSection() {
               background: 'rgba(79,70,229,0.08)', color: '#4F46E5',
               fontWeight: 700, fontSize: 13, padding: '8px 18px', borderRadius: 50,
               width: 'fit-content',
+              border: '1px solid rgba(79,70,229,0.2)'
             }}>
               <Globe size={16} /> About Klanvision
             </div>
 
+
             {/* Company description paragraphs */}
-            <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.8 }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: 16, lineHeight: 1.8 }}>
               Klanvision is a professional company specializing in innovative design, web development, and digital marketing. Headquartered in <strong style={{ color: '#4F46E5' }}>Anantapur, Andhra Pradesh</strong>, we provide comprehensive solutions for scalable growth across industries.
             </p>
 
-            <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.8 }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: 16, lineHeight: 1.8 }}>
               Since 2025, we have been delivering seamless digital services, ensuring every business achieves its digital goals. At Klanvision, we prioritize quality, efficiency, and customer satisfaction.
             </p>
+
 
             {/* Highlights – animated checkmark bullet list */}
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -200,8 +217,9 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
-                  style={{ display: 'flex', alignItems: 'flex-start', gap: 12, color: '#374151', fontSize: 14.5 }}
+                  style={{ display: 'flex', alignItems: 'flex-start', gap: 12, color: 'var(--text-main)', fontSize: 14.5 }}
                 >
+
                   {/* Gradient checkmark icon */}
                   <div style={{
                     width: 22, height: 22, borderRadius: '50%', flexShrink: 0, marginTop: 1,
